@@ -5,6 +5,9 @@ date:   2018-05-13 07:41:22 +0000
 categories: jekyll update
 ---
 
+***
+## Frameworks
+
 #### HIPACC
 - C/C++ -> HLS
 - http://hipacc-lang.org/
@@ -42,6 +45,23 @@ categories: jekyll update
 #### sPyC
 - Python -> C/C++ for HLS
 - https://github.com/ISI-RCG
+
+
+***
+
+## Courses
+
+#### ECE 5775 - High-Level Digital Design Automation (Cornell)
+- https://web.csl.cornell.edu/courses/ece5775/
+
+
+#### ECE 699 - Software/Hardware Codesign
+- http://ece.gmu.edu/coursewebpages/ECE/ECE699_SW_HW/S16/
+- http://ece.gmu.edu/coursewebpages/ECE/ECE699_SW_HW/S15/
+
+
+#### ECE 522: Hardware/Sofware Codesign with FPGAs
+- http://ece-research.unm.edu/jimp/codesign/
 
 
 ***
