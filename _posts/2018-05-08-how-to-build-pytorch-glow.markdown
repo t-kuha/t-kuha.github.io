@@ -8,10 +8,11 @@ categories: jekyll update
 #### 0. Environment
   - Ubuntu 16.04
   - LLVM 5.0.1
+  - CMake 3.9.3
 
 
 #### 1. Get source
-  - Get glow's source code
+  - Get glow's source code:
 
   ```bash
   $ git clone --recursive https://github.com/pytorch/glow.git
@@ -19,7 +20,7 @@ categories: jekyll update
 
 
 #### 2. Get LLVM
-  - Download from https://llvm.org/ & extract the .tar.xz
+  - Download from [https://llvm.org/](https://llvm.org/) & extract the .tar.xz
 
   - Extract the downloaded archive:
 
@@ -55,6 +56,7 @@ categories: jekyll update
 #### 5. Run MNIST example
 
   ```bash
+  # Go back to the root of repo
   $ cd ..
   $ python utils/download_test_db.py --all
   $ _build/bin/mnist
