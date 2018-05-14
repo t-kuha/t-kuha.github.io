@@ -13,7 +13,10 @@ When we create Vivado HLS project for non-default board, in the "Device Selectio
 - Package type
 - Speed grade
 
-and then choose the right part.
+and then choose the right part:
+
+![Dialog-After]({{ "/assets/2018/dialog.png" | absolute_url }})
+
 
 This (cumbersome) process can be grately simplified by addng board definition in Vivado HLS config file.
 
@@ -25,6 +28,12 @@ All you have to do is add the following line to the file _\<Vivado Installation 
 ```XML
 <board name="Zybo Z7-20" display_name="Zybo Z7 (7020)" family="zynq" part="xc7z020clg400-1"  device="xc7z020" package="clg400" speedgrade="-1" vendor="digilentinc.com" />
 ```
+
+
+... and the custom setting will appear in the "Device Selection Dialog":
+
+![Dialog-After]({{ "/assets/2018/after.png" | absolute_url }})
+
 
 - Source: [Xilinx Community Forum](https://forums.xilinx.com/t5/Vivado-High-Level-Synthesis-HLS/Zybo-Board-Files-for-HLS/td-p/748198)
 
