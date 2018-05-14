@@ -32,7 +32,7 @@ All you have to do is add the following line to the file _\<Vivado Installation 
 
 ... and the custom setting will appear in the "Device Selection Dialog":
 
-![Dialog-After]({{ "/assets/2018/0514/after.png" | absolute_url }}/)
+![Dialog-After]({{ "/assets/2018/0514/after.png" | absolute_url }})
 
 
 - Source: [Xilinx Community Forum](https://forums.xilinx.com/t5/Vivado-High-Level-Synthesis-HLS/Zybo-Board-Files-for-HLS/td-p/748198)
