@@ -47,6 +47,12 @@ categories: jekyll update
 - [https://github.com/ISI-RCG](https://github.com/ISI-RCG)
 
 
+#### RIPL
+- [https://github.com/robstewart57/ripl](https://github.com/robstewart57/ripl)
+- [http://www.macs.hw.ac.uk/~rs46/](http://www.macs.hw.ac.uk/~rs46/)
+
+
+
 ***
 
 ## Courses
