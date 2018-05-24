@@ -9,11 +9,12 @@ categories: jekyll update
 
 - Target function name must not start with "_" (underscore).
 
-- To change default working directory, open the file 
 
-  ~/.vivado_hls/\<version\>/.vivado_hls.ini
+- To change default working directory ("Location" in the "Project Configuration" wizard), open the file 
 
-  and edit "Location=" entry.
+  ~/.vivado_hls/\<Your Vivado HLS version\>/.vivado_hls.ini
+
+  and edit "Location=" entry to the path you want.
 
 
 ***
