@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "Tips for Xilinx Vivado HL"
+title:  "Tips for Xilinx Vivado HLS"
 date:   2018-05-24 11:00:00 +0900
 categories: jekyll update
 ---
 
-## Tips for Xilinx Vivado HL
+## Tips for Xilinx Vivado HLS
 
 - Target function name must not start with "_" (underscore).
 
