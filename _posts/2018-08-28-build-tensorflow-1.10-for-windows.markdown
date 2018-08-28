@@ -6,17 +6,17 @@ categories: jekyll update
 ---
 
 
-#### Environemt
+### Environemt
   - TensorFlow: ver. 1.10.0
     - https://github.com/tensorflow/tensorflow
     - https://github.com/tensorflow/tensorflow/archive/v1.10.0.tar.gz
 
-
+  
   - Python: Python 3.6.5 (Miniconda3 ver. 4.5.4 / 64bit)
     - https://conda.io/miniconda.html
     - https://github.com/tensorflow/tensorflow/archive/v1.10.0.tar.gz
 
-
+  
   - CMake: ver. 3.7.2
     - https://cmake.org/
 
@@ -40,7 +40,7 @@ categories: jekyll update
 
 
 ***
-#### Setup
+### Setup
 
 - Open Visual Studio command Prompt (2017 / Win64).
 
@@ -121,7 +121,7 @@ categories: jekyll update
 
 
 ***
-#### Install
+### Install
 
 - GPU version:
 
