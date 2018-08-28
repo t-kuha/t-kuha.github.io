@@ -5,22 +5,19 @@ date:   2018-08-28 16:00:00 +0900
 categories: jekyll update
 ---
 
-## How to Build TensorFlow for Windows
-
 
 #### Environemt
   - TensorFlow: ver. 1.10.0
-
     - https://github.com/tensorflow/tensorflow
     - https://github.com/tensorflow/tensorflow/archive/v1.10.0.tar.gz
 
-  - Python: Python 3.6.5 (Miniconda3 ver. 4.5.4 / 64bit)
 
+  - Python: Python 3.6.5 (Miniconda3 ver. 4.5.4 / 64bit)
     - https://conda.io/miniconda.html
     - https://github.com/tensorflow/tensorflow/archive/v1.10.0.tar.gz
 
-  - CMake: ver. 3.7.2
 
+  - CMake: ver. 3.7.2
     - https://cmake.org/
 
   - Compiler: Visual Studio 2017 (15.4.5)
