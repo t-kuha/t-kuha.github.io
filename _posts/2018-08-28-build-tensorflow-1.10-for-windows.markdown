@@ -52,7 +52,7 @@ categories: jekyll update
 
   - Insert appropriate CUDA compute capability into _arch=compute_XX,code=\"sm_XX,compute_XX\"_ and _-DTF_EXTRA_CUDA_CAPABILITIES=X.X_
 
-  - Go to  to look up Compute Capability.
+  - Go to [https://developer.nvidia.com/cuda-gpus](https://developer.nvidia.com/cuda-gpus) to look up Compute Capability.
 
   ```text
   set(CUDA_NVCC_FLAGS ${CUDA_NVCC_FLAGS};-gencode arch=compute_61,code=\"sm_61,compute_61\";)

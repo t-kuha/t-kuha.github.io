@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "How to Build Pytorch with Caffe2 for Windows"
+title:  "How to Build PyTorch with Caffe2 for Windows"
 date:   2018-08-29 16:00:00 +0900
 categories: jekyll update
 ---
@@ -40,16 +40,24 @@ categories: jekyll update
 - Set path:
 
   ```msdos
-  set Path=<CMake folder>\bin;<SWIG folder>;<Portable git folder>\bin;%Path%
+  set Path=<CMake folder>\bin;%Path%
   ```
 
-- Go to output directory.
+- Go to PyTorch source folder.
 
-- Modify CMakeLists.txt (GPU version only):
+- Set environment variable
+  - Change _NO_CUDA_ to 1 if GPU version is not needed.
+  - Set appropriate CUDA compute capability to  _TORCH_CUDA_ARCH_LIST_.
 
-  - Insert appropriate CUDA compute capability into _arch=compute_XX,code=\"sm_XX,compute_XX\"_ and _-DTF_EXTRA_CUDA_CAPABILITIES=X.X_
+  ```msdos
+  set NO_CUDA=0
+  set DISTUTILS_USE_SDK=1
+  set CMAKE_GENERATOR=Visual Studio 15 2017 Win64
+  set TORCH_CUDA_ARCH_LIST=6.1
+  set FULL_CAFFE2=1 
+  ```
 
-  - Go to  to look up Compute Capability.
+  - Go to [https://developer.nvidia.com/cuda-gpus](https://developer.nvidia.com/cuda-gpus) to look up Compute Capability.
 
   ```text
   set(CUDA_NVCC_FLAGS ${CUDA_NVCC_FLAGS};-gencode arch=compute_61,code=\"sm_61,compute_61\";)
