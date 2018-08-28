@@ -1,16 +1,14 @@
 ---
 layout: post
-title:  "How to Build TensorFlow for Windows"
-date:   2018-08-28 16:00:00 +0900
+title:  "How to Build Pytorch with Caffe2 for Windows"
+date:   2018-08-29 16:00:00 +0900
 categories: jekyll update
 ---
 
 
 ### Environemt
-  - TensorFlow: ver. 1.10.0
-    - [https://github.com/tensorflow/tensorflow](https://github.com/tensorflow/tensorflow)
-    - https://github.com/tensorflow/tensorflow/archive/v1.10.0.tar.gz
-
+  - Pytorch: ver. 0.4.1
+    - [https://github.com/pytorch/pytorch](https://github.com/pytorch/pytorch)
 
   - Python: Python 3.6.5 (Miniconda3 ver. 4.5.4 / 64bit)
     - [https://conda.io/miniconda.html](https://conda.io/miniconda.html)
@@ -21,10 +19,7 @@ categories: jekyll update
 
   - Compiler: Visual Studio 2017 (15.4.5)
     - [https://visualstudio.microsoft.com/](https://visualstudio.microsoft.com/)
-    - __Note:__ Be careful of compatibility with CUDA NVCC if you are building with GPU support; Latest VS may be incompatilble with CUDA NVCC and cause compilation error.
-
-  - SWIG: ver. 3.0.12
-    - [http://www.swig.org/](http://www.swig.org/)
+    - Note: Be careful of compatibility with CUDA NVCC if you are building with GPU support; Latest VS may be incompatilble with CUDA NVCC and cause compilation error.
 
   - git: Portable Git ver. 2.16.2
     - [https://git-scm.com/](https://git-scm.com/)
@@ -48,6 +43,8 @@ categories: jekyll update
   set Path=<CMake folder>\bin;<SWIG folder>;<Portable git folder>\bin;%Path%
   ```
 
+- Go to output directory.
+
 - Modify CMakeLists.txt (GPU version only):
 
   - Insert appropriate CUDA compute capability into _arch=compute_XX,code=\"sm_XX,compute_XX\"_ and _-DTF_EXTRA_CUDA_CAPABILITIES=X.X_
@@ -64,7 +61,6 @@ categories: jekyll update
   else (WIN32)
   ```
 
-- Go to output directory.
 
 - Configuration:
 
@@ -86,7 +82,7 @@ categories: jekyll update
   - CPU-only version
 
     - Change "tensorflow_CUDA_VERSION=9.2" according to your CUDA environment.
-    - "CUDA_HOST_COMPILER" must be specified when using Visual Studio 2017; otherwise compilation will not complete.
+    - "CUDA_HOST_COMPILER" must be specified when VS 2017 is used; otherwise compilation will not complete.
 
   ```
   cmake ^
@@ -104,8 +100,8 @@ categories: jekyll update
 - Apply patch:
 
   - Reference: 
-    - [https://github.com/tensorflow/tensorflow/issues/19198](https://github.com/tensorflow/tensorflow/issues/19198)
-    - [http://eigen.tuxfamily.org/bz/attachment.cgi?id=834](http://eigen.tuxfamily.org/bz/attachment.cgi?id=834)
+    - https://github.com/tensorflow/tensorflow/issues/19198
+    - http://eigen.tuxfamily.org/bz/attachment.cgi?id=834
 
 
 - Build Python wheel:
@@ -114,21 +110,6 @@ categories: jekyll update
   cmake --build . --config Release --target tf_python_build_pip_package
   ```
 
-
-***
-### Install
-
-- GPU version:
-
-  ```msdos
-  pip install tensorflow_gpu-1.10.0-cp36-cp36m-win_amd64.whl
-  ```
-
-- CPU-only version:
-
-  ```
-  pip install tensorflow-1.10.0-cp36-cp36m-win_amd64.whl
-  ```
 
 
 ***
