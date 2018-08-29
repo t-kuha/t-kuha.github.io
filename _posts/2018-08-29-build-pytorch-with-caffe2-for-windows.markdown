@@ -47,7 +47,7 @@ categories: jekyll update
 
 - Set environment variable
   - Change _NO_CUDA_ to 1 if GPU version is not needed.
-  - Set appropriate CUDA compute capability to  _TORCH_CUDA_ARCH_LIST_.
+  - Set appropriate CUDA compute capability to  _TORCH_CUDA_ARCH_LIST_. (Go to [https://developer.nvidia.com/cuda-gpus](https://developer.nvidia.com/cuda-gpus) to look up Compute Capability.)
 
   ```msdos
   set NO_CUDA=0
@@ -57,66 +57,6 @@ categories: jekyll update
   set FULL_CAFFE2=1 
   ```
 
-  - Go to [https://developer.nvidia.com/cuda-gpus](https://developer.nvidia.com/cuda-gpus) to look up Compute Capability.
-
-  ```text
-  set(CUDA_NVCC_FLAGS ${CUDA_NVCC_FLAGS};-gencode arch=compute_61,code=\"sm_61,compute_61\";)
-
-  ...
-
-  if (WIN32)
-    add_definitions(-DGOOGLE_CUDA=1 -DTF_EXTRA_CUDA_CAPABILITIES=6.1)
-  else (WIN32)
-  ```
-
-
-- Configuration:
-
-  - GPU version:
-
-    - Change "Visual Studio 15 2017 Win64" according to the compiler you are using.
-
-  ```msdos
-  cmake ^
-  <TF source>\tensorflow\contrib\cmake ^
-  -G"Visual Studio 15 2017 Win64" ^
-  -DCMAKE_BUILD_TYPE=Release ^
-  -Dtensorflow_DISABLE_EIGEN_FORCEINLINE=ON ^
-  -Dtensorflow_BUILD_CC_TESTS=OFF ^
-  -Dtensorflow_BUILD_MORE_PYTHON_TESTS=OFF ^
-  -Dtensorflow_ENABLE_GPU=OFF
-  ```
-
-  - CPU-only version
-
-    - Change "tensorflow_CUDA_VERSION=9.2" according to your CUDA environment.
-    - "CUDA_HOST_COMPILER" must be specified when VS 2017 is used; otherwise compilation will not complete.
-
-  ```
-  cmake ^
-  <TF source>\tensorflow\contrib\cmake ^
-  -G"Visual Studio 15 2017 Win64" ^
-  -DCUDA_HOST_COMPILER="C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/VC/Tools/MSVC/14.11.25503/bin/Hostx64/x64" ^
-  -DCMAKE_BUILD_TYPE=Release ^
-  -Dtensorflow_DISABLE_EIGEN_FORCEINLINE=ON ^
-  -Dtensorflow_BUILD_CC_TESTS=OFF ^
-  -Dtensorflow_BUILD_MORE_PYTHON_TESTS=OFF ^
-  -Dtensorflow_ENABLE_GPU=ON ^
-  -Dtensorflow_CUDA_VERSION=9.2
-  ```
-
-- Apply patch:
-
-  - Reference: 
-    - https://github.com/tensorflow/tensorflow/issues/19198
-    - http://eigen.tuxfamily.org/bz/attachment.cgi?id=834
-
-
-- Build Python wheel:
-
-  ```msdos
-  cmake --build . --config Release --target tf_python_build_pip_package
-  ```
 
 
 
